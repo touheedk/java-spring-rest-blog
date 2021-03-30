@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RepositoryRestResource(exported = false)
-@Component
 public interface AuthorRepository extends JpaRepository<Author, Long>{
 //    public List<Author> findAll() {
 //        return new ArrayList<>();

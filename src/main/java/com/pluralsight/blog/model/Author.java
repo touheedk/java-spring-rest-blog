@@ -18,8 +18,20 @@ public class Author {
     private Long id;
     private String firstname;
     private String lastname;
+    @JsonIgnore
     private String username;
+    @JsonIgnore
     private String password;
+    @OneToMany
+    private List<Post> posts = new ArrayList<Post>();
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void addPost(Post post) {
+        this.posts.add(post);
+    }
 
     public Author() {
         super();
@@ -82,13 +94,5 @@ public class Author {
             System.out.println("username not equal");
             return false;}
         return true;
-    }
-
-    public List<Post> getPosts() {
-        return null;
-    }
-
-    public void addPost(Post post) {
-        return;
     }
 }
